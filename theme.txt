@@ -17,3 +17,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+Theme files of Godot theme:
+* _config.yml
+* _layouts/article.html 
+* _layouts/blog.html 
+* _layouts/default.html
+* pages/home.html
+* assets/css/main.css 
+* assets/css/transparent-nav.css 
+* assets/footer/feed_logo.svg 
+* assets/footer/feed_logo.svg 
+* assets/footer/github_logo.svg 
+* assets/footer/twitter_logo.svg 
+* assets/icons/arrow-flip.svg
+* assets/icons/cross.svg 
+* assets/icons/hamburger.svg 
+* assets/icons/link.svg 
+* assets/icons/search.svg 
