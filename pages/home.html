@@ -1,0 +1,217 @@
+---
+permalink: /
+title: "ClosedXML - Simple Spreadsheet Creation"
+description: "ClosedXML provides a simple API to create and manipute Excel files without a need to understand underlaying format."
+layout: default
+---
+
+{% include header.html %}
+
+<link rel="stylesheet" href="/assets/css/transparent-nav.css">
+<style>
+	.main-download {
+		display: flex;
+		align-items: flex-start;
+		gap: 48px;
+		margin-top: 48px;
+	}
+
+	.main-download-links {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.main-download-links .btn-download {
+		width: 100%;
+	}
+	.main-download-links .btn-download:nth-of-type(2n) {
+		background-color: rgb(132 151 174 / 68%);
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+	}
+	.main-download-links .btn-download:nth-of-type(2n) .download-title {
+		color: #f7f7f7;
+	}
+	.main-download-links .btn-download:nth-of-type(2n) .download-hint {
+		background-color: var(--primary-color-subdued);
+	}
+
+	@media (max-width: 900px) {
+		.main-download {
+			align-items: center;
+			flex-direction: column;
+			gap: 36px;
+		}
+	}
+
+	#donations {
+		background-color: var(--dark-color);
+		color: var(--dark-color-text);
+		overflow: auto;
+		text-align: center;
+	}
+
+	#donations h1,
+	#donations h2,
+	#donations h3 {
+		color: var(--dark-color-text-title);
+	}
+
+	.feature-link {
+		text-decoration: none;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 20px;
+	}
+
+	.feature:hover {
+		transform: translateY(-2px);
+	}
+
+	.features-row> :first-child,
+	.split-row> :first-child {
+		margin-right: 8px;
+	}
+
+	.features-row> :last-child,
+	.split-row> :last-child {
+		margin-left: 8px;
+	}
+
+	.feature img {
+		display: block;
+		width: 100%;
+		height: auto;
+		position: relative;
+		background-color: #607080;
+		aspect-ratio: 3/2;
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	.feature {
+		position: relative;
+		overflow: hidden;
+		transition: transform 200ms ease-in-out;
+		height: 100%;
+		border-radius: 8px;
+	}
+
+	.feature.dark {
+		background-color: var(--transparent-cover-darker);
+	}
+
+	.feature h4 {
+		margin-bottom: 10px;
+	}
+
+	.feature p {
+		margin: 0;
+	}
+
+	.feature .body {
+		padding: 24px;
+	}
+
+	.feature .dark h4 {
+		color: var(--dark-color-text-title);
+	}
+
+	.features-learn-more {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 16px;
+	}
+
+	.img-auto-size {
+		width: 100%;
+		height: auto;
+	}
+
+	.btn.btn-flat.btn-hero-learn-more {
+		margin: 0;
+	}
+
+	@media (max-width: 900px) {
+		.features-grid {
+			grid-template-columns: 1fr;
+		}
+
+		#highlight .highlight-cover {
+			border-radius: 4px 4px 0 0;
+		}
+
+		#highlight .highlight-details {
+			border-radius: 0;
+		}
+	}
+
+	.news-list .button-container {
+		text-align: right;
+	}
+
+	@media (max-width: 768px) {
+		.news-list .button-container {
+			text-align: left;
+		}
+	}
+</style>
+
+<section class="hero">
+	<div class="background-image" style="background-image: url()"></div>
+
+	<div class="wrapper">
+		<div class="copy container">
+			<h1>ClosedXML - Simple Spreadsheet Creation.</h1>
+			<p>ClosedXML is an open source library in C# that makes it easy to create and modify Excel spreadsheets.</p>
+
+			<div class="main-download">
+				<a href="https://www.nuget.org/packages/ClosedXML" class="btn btn-flat btn-flat-white btn-flat-frosted btn-hero-learn-more">NuGet</a>
+				<a href="https://docs.closedxml.io" class="btn btn-flat btn-flat-white btn-flat-frosted btn-hero-learn-more">Documentation</a>
+		    </div>
+		</div>
+	</div>
+</section>
+
+<section class="container padded">
+    <h2>Latest posts</h2>
+	<div class="flex eqsize responsive" style="gap: 30px;">
+        {% assign latest_posts = site.article | sort:"date" | reverse %}
+        {% for post in latest_posts limit:1 %}
+		<a href="{{ post.url }}" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('{{ post.image }}');"></div>
+				<div class="content">
+					<h3>{{ post.title }}</h3>
+					<p class="excerpt">{{ post.excerpt }}</p>
+				</div>
+			</article>
+		</a>
+		{% endfor %}
+
+		<div class="news-list">
+			<div style="display: grid; gap: 18px;">
+				{% for post in latest_posts limit:3 offset:1 %}
+				<a href="{{ post.url }}" style="text-decoration: none">
+					<article class="article-card row">
+						<div class="thumbnail" style="background-image: url('{{ post.image }}');" href="{{ post.url }}"></div>
+						<div>
+							<h3>{{ post.title }}</h3>
+							<p class="excerpt">{{ post.excerpt }}</p>
+						</div>
+					</article>
+				</a>
+				{% endfor %}
+				<div class="button-container">
+					<a href="/blog" class="btn no-margin">More News</a>
+				</div>
+			</div>
+		</div>
+</section>
+
+{% include footer.html %}

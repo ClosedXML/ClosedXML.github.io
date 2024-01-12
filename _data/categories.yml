@@ -1,0 +1,11 @@
+dev-diary:
+  - name: Dev diary
+    description: Dev diary about quirky, fun and less fun things found in OOXML/ClosedXML.
+
+release:
+  - name: Release
+    description: ClosedXML release announcement.
+
+showcase:
+  - name: Showcase
+    description: Article displaying a new feature or improvement.
